@@ -1,0 +1,69 @@
+﻿@{
+    ViewBag.Title = "UpdateTaxes";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+@model List<Resturant.Models.Taxes>
+@using Resturant.Models;
+<div class="row" style="margin-top:10%;">
+    <div class="col-md-offset-2 col-md-6">
+        <div class="box box-primary col-md-10">
+            <div class="box-body">
+                <h3 class="box-title">Update Taxes</h3>
+                @{
+            Taxes taxes = ViewBag.Taxes;
+            <form role="form" method="post" action="../AdminFood/UpdateTaxes">
+
+                <div class="form-group">
+
+                    <input type="text" class="form-control" name="Name" value=@taxes.Name>
+                </div>
+                <div class="form-group">
+                    @Html.Hidden("Id", taxes.Id)
+                    <input type="text" class="form-control" name="Percentage" value=@taxes.Percentage>
+                </div>
+
+                <!-- text input -->
+
+
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-default">Cancel</button>
+                    <button type="submit" class="btn btn-primary pull-right">Update</button>
+                </div>
+            </form>
+        }
+           </div>
+        </div>
+    </div>
+</div>
+
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">List of Taxes</h3>
+    </div>
+    <div class="box-body">
+        <table id="example2" class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th class="col-md-10">Name</th>
+                    <th>Percentage</th>
+                   
+                    <th>Action</th>
+
+                </tr>
+
+            </thead>
+            @foreach (Taxes tax in Model.ToList())
+            {
+                <tr>
+                    <td>@tax.Name</td>
+                    <td>@tax.Percentage</td>
+                   
+                    <td>@Html.ActionLink("Delete Tax", "deleteTaxes", new { _id = tax.Id }, new { @type = "button", @class = "btn btn-block btn-primary" }) </td>
+
+                </tr>
+            }
+            <tbody>
+        </table>
+    </div>
+</div>
+

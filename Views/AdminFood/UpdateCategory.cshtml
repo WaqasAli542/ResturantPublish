@@ -1,0 +1,81 @@
+﻿@{
+    ViewBag.Title = "AddFood";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+@model List<Resturant.Models.Category>
+@using Resturant.Models;
+<div class="row" style="margin-top:10%;">
+    <div class="col-md-offset-2 col-md-6">
+        <div class="box box-primary col-md-10">
+            <div class="box-body">
+                <h3 class="box-title">Update Food Category</h3>
+                @{
+    Category category = ViewBag.Category;
+    <form role="form" method="post" action="../AdminFood/UpdateCategory">
+
+
+        <div class="form-group">
+            <label>Select</label>
+            @Html.Hidden("Id", category.Id)
+            <select class="form-control" name="CousineId">
+                <option value=@category.Cousine.Id >@category.Cousine.Name</option>
+                @foreach (Cousine cousine in ViewBag.Cousines)
+                {
+                    if (@category.Cousine.Name != @cousine.Name)
+                    {
+                        <option value=@cousine.Id>@cousine.Name</option>
+                    }
+                }
+            </select>
+        </div>
+        <!-- text input -->
+        <div class="form-group">
+
+            <input type="text" class="form-control" name="Name" value=@category.Name>
+        </div>
+
+        <div class="box-footer">
+            <button type="submit" class="btn btn-default">Cancel</button>
+            <button type="submit" class="btn btn-primary pull-right">Update</button>
+        </div>
+
+
+        <!-- radio -->
+        <!-- select -->
+        <!-- Select multiple-->
+    </form>
+}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">List of Food Categories</h3>
+    </div>
+    <div class="box-body">
+        <table id="example2" class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th class="col-md-10">Name</th>
+                    <th>Cousine</th>
+                    <th>Action</th>
+
+                </tr>
+
+            </thead>
+            @foreach (Category item in Model.ToList())
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Cousine.Name</td>
+                    <td>@Html.ActionLink("Delete Category", "DeleteCategory", new { _id = item.Id }, new { @type = "button", @class = "btn btn-block btn-primary" }) </td>
+
+                </tr>
+            }
+            <tbody>
+        </table>
+    </div>
+</div>
+

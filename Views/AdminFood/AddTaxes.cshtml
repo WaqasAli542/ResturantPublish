@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "AddTaxes";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+@model List<Resturant.Models.Tax>
+@using Resturant.Models;
+<div class="row" style="margin-top:10%;">
+    <div class="col-md-offset-2 col-md-6">
+        <div class="box box-primary col-md-10">
+            <div class="box-body">
+                <h3 class="box-title">Add Taxes</h3>
+                <form role="form" method="post" action="../AdminFood/AddTax">
+                    <!-- text input -->
+                    <div class="form-group">
+
+                        <input type="text" class="form-control" name="Name" placeholder="Enter the name of Tax">
+                    </div>
+                    <div class="form-group">
+
+                        <input type="number" class="form-control" name="Percentage" placeholder="Enter the percentage of Tax">
+                    </div>
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-default">Cancel</button>
+                        <button type="submit" class="btn btn-primary pull-right">Add</button>
+                    </div>
+
+
+                    <!-- radio -->
+                    <!-- select -->
+                    <!-- Select multiple-->
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">List of Taxes</h3>
+    </div>
+    <div class="box-body">
+        <table id="example2" class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th class="col-md-10">Food</th>
+                    <th>Percentage</th>
+                    <th>Action</th>
+
+                </tr>
+
+            </thead>
+            @foreach (Tax tax in Model.ToList())
+            {
+                <tr onclick="location.href='@Url.Action("DisplayUpdateTaxes", "AdminFood", new { _id = tax.Id })'">
+                    <td>@tax.Name</td>
+                    <td>@tax.Percentage</td>    
+                    <td>@Html.ActionLink("Delete Tax", "deleteTaxes", new { _id = tax.Id }, new { @type = "button", @class = "btn btn-block btn-primary" }) </td>
+
+                </tr>
+            }
+            <tbody>
+        </table>
+    </div>
+</div>

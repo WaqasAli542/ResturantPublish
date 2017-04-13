@@ -1,0 +1,91 @@
+﻿@{
+    ViewBag.Title = "AddSpecialOffer";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@model List<Resturant.Models.SpecialOffer>
+@using Resturant.Models;
+<div class="row" style="margin-top:10%;">
+    <div class="col-md-offset-2 col-md-6">
+        <div class="box box-primary col-md-10">
+            <div class="box-body">
+                <h3 class="box-title">Add SpecialOffer</h3>
+                <form role="form" method="post" action="../AdminFood/addSpecialOffer" enctype="multipart/form-data">
+                    <!-- text input -->
+                    <div class="form-group">
+
+                        <input type="date" class="form-control" name="StartingDate" placeholder="Select teh Starting Date">
+                    </div>
+                    <div class="form-group">
+
+                        <input type="date" class="form-control" name="EndingDate" placeholder="Select teh Ending Date">
+                    </div>
+                    <div class="form-group">
+
+                        <input type="text" class="form-control" name="Description" placeholder="Enter the Name of SpecialOffer">
+                    </div>
+                    <div class="form-group">
+
+                        <input type="text" class="form-control" name="Price" placeholder="Enter the Price of SpecialOffer">
+                    </div>
+
+                    <input type="file" name="file" />
+
+
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-default">Cancel</button>
+                        <button type="submit" class="btn btn-primary pull-right">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">List of SpecialOffers</h3>
+    </div>
+    <div class="box-body">
+        <table id="example2" class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th class="col-md-3">Starting Date</th>
+                    <th class="col-md-3">Ending Date</th>
+                    <th class="col-md-1">Price</th>
+                    <th class="col-md-3">Image</th>
+                    <th>Action</th>
+
+                </tr>
+
+            </thead>
+            @foreach (SpecialOffer specialOffer in Model.ToList())
+            {
+                <tr onclick="location.href='@Url.Action("displaySpecialOfferPage", "AdminFood", new { _id = specialOffer.Id })'">
+                    <td>@specialOffer.StartingDate</td>
+                    <td>@specialOffer.EndingDate</td>
+                    <td>@specialOffer.Price</td>
+                    @if (!(specialOffer.Image == null))
+                    {
+                        if (!specialOffer.Image.Equals(string.Empty))
+                        {
+                            <td> <img src="@specialOffer.Image" height="100" width="100" /></td>
+                        }
+                        else
+                        {
+                            <td>No Image</td>
+                        }
+                    }
+                    else
+                    {
+                        <td>No Image</td>
+                    }
+
+                    <td>@Html.ActionLink("Delete SpecialOffer", "deleteSpecialOffer", new { _Id = specialOffer.Id }, new { @type = "button", @class = "btn btn-block btn-primary" }) </td>
+
+                </tr>
+            }
+            <tbody>
+        </table>
+    </div>
+</div>

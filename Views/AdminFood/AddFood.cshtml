@@ -1,0 +1,131 @@
+﻿@{
+    ViewBag.Title = "AddFood";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+@model List<Resturant.Models.Food>
+@using Resturant.Models;
+
+<script type="text/javascript">
+    function updateValue() {
+
+        $.ajax({
+            dataType: "json",
+            type: "GET",
+            url: '@Url.Action("getCategory", "AdminFood")',
+            contentType: "application/json; charset=utf-8",
+            data: { cousineId: parseInt($('#CousineId').val()) },
+            success: function (response) {
+
+                var $el = $("#CategoryId");
+                $el.empty(); // remove old options
+                $el.append($("<option></option>")
+                        .attr("value", '').text('Please Select'));
+                   
+                $.each(response, function (value, key) {
+                 
+                    $el.append($("<option></option>")
+                            .attr("value", key.Id).text(key.Name));
+                });
+            },
+            error: function (response) { alert(response ); }
+
+        });
+
+    }
+    
+</script>
+<div class="row" style="margin-top:10%;">
+    <div class="col-md-offset-2 col-md-6">
+        <div class="box box-primary col-md-10">
+            <div class="box-body">
+                <h3 class="box-title">Add Food</h3>
+                <form role="form" method="post" action="../AdminFood/addFood"  enctype="multipart/form-data">
+
+                    <div class="form-group">
+                        <label>Select Cousine</label>
+                        <select class="form-control" onchange="updateValue()" id="CousineId" name="CousineId">
+                            <option>Select a Cousine</option>
+                            @foreach (Cousine cousine in ViewBag.Cousines)
+                            {
+                                <option value=@cousine.Id>@cousine.Name</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Select Category</label>
+                        <select class="form-control" id="CategoryId" name="CategoryId" ></select>
+                    </div>
+                    <!-- text input -->
+                    <div class="form-group">
+
+                        <input type="text" class="form-control" name="Name" placeholder="Enter the Name of food" required>
+                    </div>
+                    <div class="form-group">
+
+                        <input type="text" class="form-control" name="Tageline" placeholder="Tagline">
+                    </div>
+
+                    <input type="file" name="file" />
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-default">Cancel</button>
+                        <button type="submit" class="btn btn-primary pull-right">Add</button>
+                    </div>
+
+
+                    <!-- radio -->
+                    <!-- select -->
+                    <!-- Select multiple-->
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">List of Foods</h3>
+    </div>
+    <div class="box-body">
+        <table id="example2" class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th class="col-md-10">Name</th>
+                    <th>Food Category</th>
+                    <th>Image</th>
+                    <th>Action</th>
+
+                </tr>
+
+            </thead>
+            @foreach (Food food in Model.ToList())
+            {
+                
+                <tr onclick="location.href='@Url.Action("DisplayUpdateFood", "AdminFood", new { _id=food.Id})'">
+                    <td>@food.Name</td>
+                    <td>@food.Category.Name</td>
+                    @if (!(food.Image == null))
+                    {
+                        if (!food.Image.Equals(string.Empty))
+                        {
+                            <td> <img src="@food.Image" height="100" width="100" /></td>
+                        }
+                        else
+                        {
+                            <td>No Image</td>
+                        }
+                    }
+                    else
+                    {
+                        <td>No Image</td>
+                    }
+                    <td>@Html.ActionLink("Delete Food", "deleteFood", new { _id = food.Id }, new { @type = "button", @class = "btn btn-block btn-primary" }) </td>
+
+                </tr>
+            }
+            <tbody>
+        </table>
+    </div>
+</div>
+
+
+

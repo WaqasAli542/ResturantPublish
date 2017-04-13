@@ -1,0 +1,87 @@
+﻿@{
+    ViewBag.Title = "UpdateFoodItem";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+@model List<Resturant.Models.FoodItem>
+@using Resturant.Models;
+<div class="row" style="margin-top:10%;">
+    <div class="col-md-offset-2 col-md-6">
+        <div class="box box-primary col-md-10">
+            <div class="box-body">
+                <h3 class="box-title">Update Food Item</h3>
+                @{
+    FoodItem foodItem = ViewBag.FoodItem;
+    <form role="form" method="post" action="../AdminFood/UpdateFoodItem">
+        <div class="form-group">
+            <label>Select</label>
+            @Html.Hidden("Id", foodItem.Id)
+            <select class="form-control" name="FoodId">
+                <option value=@foodItem.Food.Id>@foodItem.Food.Name</option>
+                @foreach (Food food in ViewBag.Food)
+                {
+                    if (@foodItem.Food.Name != @food.Name)
+                    {
+                        <option value=@food.Id>@food.Name</option>
+                    }
+                }
+            </select>
+        </div>
+        <div class="form-group">
+
+            <input type="text" class="form-control" name="Price" value=@foodItem.Price>
+        </div>
+        <div class="form-group">
+
+            <input type="text" class="form-control" name="Size" value=@foodItem.Size>
+        </div>
+      
+        <!-- text input -->
+
+
+        <div class="box-footer">
+            <button type="submit" class="btn btn-default">Cancel</button>
+            <button type="submit" class="btn btn-primary pull-right">Update</button>
+        </div>
+
+
+        <!-- radio -->
+        <!-- select -->
+        <!-- Select multiple-->
+    </form>
+}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">List of Food Items</h3>
+    </div>
+    <div class="box-body">
+        <table id="example2" class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th class="col-md-10">Food</th>
+                    <th>Price</th>
+                    <th>Size</th>
+                    <th>Action</th>
+
+                </tr>
+
+            </thead>
+            @foreach (FoodItem foodItems in Model.ToList())
+            {
+                <tr>
+                    <td>@foodItems.Food.Name</td>
+                    <td>@foodItems.Price</td>
+                    <td>@foodItems.Size</td>
+                    <td>@Html.ActionLink("Delete FoodItem", "deleteFoodItem", new { _id = foodItems.Id }, new { @type = "button", @class = "btn btn-block btn-primary" }) </td>
+
+                </tr>
+            }
+            <tbody>
+        </table>
+    </div>
+</div>
+

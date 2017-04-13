@@ -1,0 +1,90 @@
+﻿@{
+    ViewBag.Title = "Order-Online";
+}
+<!-- Fixed navbar -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <a class="navbar-brand" href="#"><img src="~/Content/images/logo.png" alt=""></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">About</a></li>
+                <li><a href="#about">Menu</a></li>
+                <li><a href="#contact">Location</a></li>
+                <li><a href="#contact">CATERING</a></li>
+                <li><a href="#contact">CAREERS</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+                <li class="order-online"><a href="#contact">Order Online</a></li>
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</nav>
+<div class="container-fluid bg-order">
+    <div class="row">
+        <div class="col-xs-12  text-center">
+            <div class="order-online-wrapper mb30 pt140">
+                <h1>ORDER ONLINE</h1>
+                <p>Been here before? <a href="#">Click here to login</a></p>
+                <p class="mb30">Please enter your address to find the location nearest you.</p>
+                <form class="form-online-order">
+                    <div class="form-group">
+                        <input class="placepicker form-control" placeholder="Enter a location" />
+                    </div>
+                    <div class="form-group  mb30">
+                        <input id="radio1" type="radio" name="radio" value="1" checked="checked">
+                        <label for="radio1">ASAP</label>
+                        <input id="radio2" type="radio" name="radio" value="2">
+                        <label for="radio2">SOME OTHER TIME</label>
+                    </div>
+                    <div class="row mb20">
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <div class="select-wrapper">
+                                    <select class="form-control w108P">
+                                        <option>Today</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <div class="select-wrapper">
+                                    <select class="form-control w108P">
+                                        <option>11:30 AM</option>
+                                        <option>12:30 AM</option>
+                                        <option>01:30 AM</option>
+                                        <option>02:30 AM</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <input class="btn btn-primary" id="" type="submit" name="" value="Submit">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="logo-footer"> <a href="#"><img src="~/Content/images/stickys-logo-dark.png" alt=""></a> </div>
+                <p>
+                    New York City’s finest gourmet Chicken Finger restaurant. Our chicken is fresh, never <br>
+                    frozen, antibiotic free, hormone free and always deliciously different.
+                </p>
+                <div class="footer-social-media"> <a href="#"><img src="~/Content/images/facebook.png" alt=""></a> <a href="#"><img src="~/Content/images/twitter.png" alt=""></a> <a href="#"><img src="~/Content/images/instagram.png" alt=""></a> </div>
+                <p class="copyright">© STICKY'S FINGER JOINT | WEBSITE POWERED BY <a href="#">BRANDIBBLE </a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- /container --> 

@@ -1,0 +1,568 @@
+@font-face {
+	font-family: 'action_manregular';
+	src: url('../Content/fonts/action_man-webfont.woff2') format('woff2'), url('../Content/fonts/action_man-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'action_manbold';
+	src: url('../Content/fonts/action_man_bold-webfont.woff2') format('woff2'), url('../Content/fonts/action_man_bold-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'action_manbold_italic';
+	src: url('../Content/fonts/action_man_bold_italic-webfont.woff2') format('woff2'), url('../Content/fonts/action_man_bold_italic-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'action_man_extendedregular';
+	src: url('../Content/fonts/action_man_extended-webfont.woff2') format('woff2'), url('../Content/fonts/action_man_extended-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'action_man_extendedbold';
+	src: url('../Content/fonts/action_man_extended_bold-webfont.woff2') format('woff2'), url('../Content/fonts/action_man_extended_bold-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'action_man_extendedBdIt';
+	src: url('../Content/fonts/action_man_extended_bold_italic-webfont.woff2') format('woff2'), url('../Content/fonts/action_man_extended_bold_italic-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'action_man_extendeditalic';
+	src: url('../Content/fonts/action_man_extended_italic-webfont.woff2') format('woff2'), url('../Content/fonts/action_man_extended_italic-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'action_manitalic';
+	src: url('../Content/fonts/action_man_italic-webfont.woff2') format('woff2'), url('../Content/fonts/action_man_italic-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'action_man_shadedregular';
+	src: url('../Content/fonts/action_man_shaded-webfont.woff2') format('woff2'), url('../Content/fonts/action_man_shaded-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'gelpenmedium';
+	src: url('../Content/fonts/gelpen-webfont.woff2') format('woff2'), url('../Content/fonts/gelpen-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'gelpenheavyheavy';
+	src: url('../Content/fonts/gelpenheavy-webfont.woff2') format('woff2'), url('../Content/fonts/gelpenheavy-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'gelpenmedium';
+	src: url('../Content/fonts/gelpen-webfont.woff2') format('woff2'), url('../Content/fonts/gelpen-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+body {
+	font-family: 'action_manregular';
+}
+img {
+	max-width: 100%;
+}
+.mb30 {
+	margin-bottom: 30px !important;
+}
+.mb20 {
+	margin-bottom: 20px !important;
+}
+.mt70 {
+	margin-top: 70px !important
+}
+.mt20 {
+	margin-top: 20px !important;
+}
+.w108P {
+	width: 108% !important;
+}
+.clr {
+	clear: both;
+}
+.pt140 {
+	padding-top: 70px
+}
+a {
+	transition: all 0.4s ease 0s;
+	color: #C32630;
+	font-size: 16px;
+}
+a:hover {
+	color: #000;
+	text-decoration: none;
+}
+h1 {
+	font-size: 50px;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-weight: bold;
+}
+h2 {
+	font-size: 45px;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-weight: bold;
+}
+p {
+	font-family: Tahoma, Geneva, sans-serif
+}
+nav {
+	background: #c32630 url(../Content/images/nav-bg-rep.png) left top repeat-x;
+	height: 120px;
+}
+.navbar-brand>img {
+	max-width: 200px;
+}
+.navbar-collapse {
+	float: right;
+	margin-top: 30px;
+}
+.navbar-inverse .navbar-nav>li>a {
+	text-transform: uppercase;
+	letter-spacing: -1px;
+	font-size: 24px;
+	font-size: 2.4rem;
+	color: #fff;
+	float: left;
+	font-family: 'action_manbold';
+}
+.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus {
+	background: none;
+	color: #000
+}
+.nav-small.navbar {
+	height: 70px;
+	margin-bottom: 0px;
+}
+.nav-small.navbar .navbar-brand>img {
+	max-width: 100px;
+}
+.order-online {
+	background: #6e151b;
+}
+.bg-order {
+	background: url(../Content/images/bg-1.jpg) left top no-repeat fixed;
+}
+.mt120 {
+	margin-top: 120px;
+}
+.container-fluid {
+	margin-top: 120px;
+	padding-bottom: 80px;
+}
+footer .container-fluid, nav .container-fluid {
+	margin-top: 0px;
+	padding-bottom: 0px;
+}
+.order-online-wrapper {
+	max-width: 520px;
+	margin: auto;
+	color: #fff;
+}
+.order-online-wrapper h1 {
+	margin-bottom: 30px;
+}
+.order-online-wrapper p {
+	font-size: 16px;
+}
+.order-online-wrapper p a {
+	color: #fff;
+	text-decoration: underline;
+}
+.form-online-order {
+	margin-top: 40px;
+}
+.form-control {
+	text-align: center;
+	color: #fff;
+	background: none;
+	border: 1px solid #fff;
+	border-radius: 0px;
+	height: 45px;
+	line-height: 45px;
+	font-size: 20px;
+}
+input[type=checkbox]:not(old), input[type=radio ]:not(old) {
+	width : 28px;
+	margin : 0;
+	padding : 0;
+	opacity : 0;
+}
+input[type=checkbox]:not(old) + label, input[type=radio ]:not(old) + label {
+	display : inline-block;
+	margin-left : -28px;
+	padding-left : 28px;
+	background : url('../Content/images/checks.png') no-repeat 0 0;
+	line-height : 24px;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-weight: normal;
+	font-size: 18px;
+}
+input[type=checkbox]:not(old):checked + label {
+	background-position : 0 -24px;
+}
+input[type=radio]:not(old):checked + label {
+	background-position : 0 -48px;
+}
+.select-wrapper {
+	border: 1px solid #fff;
+	overflow: hidden;
+	background: url(../Content/images/arrow-down.png) 95% center no-repeat;
+}
+.select-wrapper .form-control {
+	border: none;
+}
+.btn.btn-primary {
+	border-radius: 0px;
+	background-color: #C32630;
+	border: 1px solid #C32630;
+	padding: 10px 20px;
+	font-size: 22px;
+	min-width: 200px;
+}
+footer {
+	background: url(../Content/images/bg-footer-chicken_622x520.png) bottom right/311px 280px no-repeat #1F1C1B;
+	color: #fff;
+	min-height: 280px;
+	padding-left: 50px;
+	padding-top: 50px;
+	width: 100%;
+}
+.logo-footer {
+	max-width: 172px;
+	margin-bottom: 20px;
+}
+.footer-social-media {
+	margin-bottom: 20px;
+}
+.order-now-top-button {
+	float: right;
+	margin-top: 14px;
+}
+.order-now-top-button a {
+	display: block;
+	padding: 10px 15px;
+	font-weight: 900;
+	background: #6e151b;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: #fff;
+	text-decoration: none;
+}
+.login {
+	width: 100%;
+	max-width: 400px;
+	margin: 2.0em auto;
+	text-align: center;
+}
+.login .form-control {
+	border: 1px solid #000;
+}
+.copyright {
+	font-size: 12px;
+}
+.copyright a {
+	font-size: 12px;
+}
+/*............Menu Page....................*/
+.menu-bg {
+	background: url(../Content/images/bg-2.png) left top repeat fixed;
+}
+.bg-white {
+	background: #fff;
+}
+.maxw800 {
+	max-width: 800px;
+	margin: auto;
+}
+.menu-wrapper {
+	padding: 12px 25px;
+	margin-top: 100px;
+}
+.menu-wrapper h3 {
+	color: #1F1C1B;
+	font-size: 28px;
+}
+.borBlack {
+	border: 1px solid #000 !important
+}
+.maxw300 {
+	max-width: 300px;
+}
+.select-wrapper.blackSelect {
+	border: 1px solid #000 !important;
+	margin: auto;
+	background: url(../Content/images/arrow-down-black.png) 95% center no-repeat
+}
+.dots {
+	background: url(../Content/images/dots.png) left center repeat-x;
+	height: 30px;
+	margin-bottom: 40px;
+	margin-top: 30px;
+}
+.menu-category {
+	border-bottom: 4px solid #F4E38B;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	float: left;
+	width: 100%;
+}
+.menu-category h4 {
+	color: #1F1C1B;
+	font-size: 42px;
+}
+.menu-category h5 {
+	color: #1F1C1B;
+	font-size: 18px;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-weight: bold;
+}
+.menu-category p {
+	font-size: 16px;
+}
+.price {
+	font-family: 'action_manbold';
+	font-size: 26px !important;
+}
+.colRed {
+	color: #C32630 !important
+}
+.m0 {
+	margin: 0px !important;
+}
+.menu-category table tr td {
+	padding: 5px;
+}
+.menu-category table tr td h3 {
+	font-size: 24px;
+}
+.menu-category table tr td.price {
+	font-size: 24px !important;
+}
+.menu-category ul {
+	padding: 0px;
+}
+.menu-category ul li {
+	list-style: none;
+}
+/*..........Index....................*/
+.carousel-caption {
+	font-size: 80px;
+	bottom: auto;
+	top: 35%;
+	line-height: 70px;
+}
+/*..........About us....................*/
+.bg-about {
+	background: url(../Content/images/about-us.jpg) left top no-repeat;
+}
+.about-us-wrapper {
+	max-width: 750px;
+	margin: auto;
+}
+.about-us-wrapper h1 {
+	color: #fff !important;
+	margin-bottom: 50px;
+}
+.about-us-wrapper p {
+	color: #fff;
+	font-size: 20px;
+	font-family: Tahoma, Geneva, sans-serif
+}
+/*..........Career....................*/
+.bg-career {
+	background: url(../Content/images/bg-3.jpg) left top no-repeat fixed
+}
+.career-wrapper {
+	max-width: 1000px;
+	background: rgba(255,255,255,0.92);
+	margin: auto;
+	margin-top: 80px;
+	padding: 50px 25px;
+}
+.form-career .form-control {
+	border: 1px solid #000;
+	background: #fff;
+	color: #000;
+	text-align: left;
+}
+.form-career select.form-control {
+	border: none;
+	background: #fff url(../Content/images/arrow-down-black.png) 90% center no-repeat
+}
+/*..........Location..................*/
+#map {
+	display: block;
+	width: 100%;
+	height: 550px;
+}
+.overlay {
+	display: block;
+	text-align: center;
+	color: #fff;
+	font-size: 60px;
+	line-height: 80px;
+	opacity: 0.8;
+	background: #4477aa;
+	border: solid 3px #336699;
+	border-radius: 4px;
+	box-shadow: 2px 2px 10px #333;
+	text-shadow: 1px 1px 1px #666;
+	padding: 0 4px;
+}
+.overlay_arrow {
+	left: 50%;
+	margin-left: -16px;
+	width: 0;
+	height: 0;
+	position: absolute;
+}
+.overlay_arrow.above {
+	bottom: -15px;
+	border-left: 16px solid transparent;
+	border-right: 16px solid transparent;
+	border-top: 16px solid #336699;
+}
+.overlay_arrow.below {
+	top: -15px;
+	border-left: 16px solid transparent;
+	border-right: 16px solid transparent;
+	border-bottom: 16px solid #336699;
+}
+.location-wrapper {
+	max-width: 1170px;
+	margin: auto;
+}
+.location-detail p {
+	font-size: 18px;
+	margin-bottom: 10px;
+	line-height: 14px;
+	color: #000
+}
+.location-detail span {
+	font-size: 18px;
+	margin-bottom: 0px;
+	display: block;
+	color: #635a56
+}
+.location-hours {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+.location-detail h2 {
+	font-size: 35px;
+	margin-bottom: 25px;
+}
+/*..........Catering..................*/
+.jumbotron {
+	padding: 0px;
+}
+.jumbotron .catering-head {
+	position:absolute;
+	top:50%;
+	margin-top:-50px;
+	width:100%;
+	}
+.jumbotron .catering-head h2{
+	color:#fff;
+	margin-bottom:30px;
+	}
+.catering-wrapper{
+	max-width:800px;
+	margin:auto;
+	}
+.catering-detail-top{
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:16px;
+	text-align:center;
+	line-height:35px;
+	}
+.catering-heading {
+	border-bottom: 4px solid #F4E38B;
+	padding-bottom:15px;
+	margin-bottom:15px;}
+.catering-heading img{
+	max-width:450px;
+	
+	}
+.orange-dots{
+	background:url(../Content/images/dots-yellow.png) left center repeat-x;
+	background-size:44px 12px;
+	}
+.fz18{
+	font-size:18px !important}
+@media only screen and (min-width : 768px) and (max-width : 1024px) {
+.navbar-brand>img {
+	max-width: 120px;
+}
+.navbar-inverse .navbar-nav>li>a {
+	font-size: 1.9rem;
+	padding: 7px 6px;
+}
+.carousel-caption {
+	font-size: 50px;
+	top: 35%;
+	line-height: 40px;
+}
+.carousel {
+	margin-top: 120px;
+}
+.location-detail h2 {
+	font-size: 24px;
+}
+}
+ @media only screen and (max-width : 767px) {
+h1 {
+	font-size: 34px;
+}
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+	width: 100%;
+	margin: 35px 0px 0px;
+	background: #c32630;
+}
+.navbar-nav {
+	margin: 0px;
+}
+.nav>li {
+	position: relative;
+	display: block;
+	float: left;
+	width: 100%;
+}
+.navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
+}
+.navbar-inverse .navbar-toggle {
+	margin-top: 42px;
+}
+footer {
+	padding-left: 15px;
+}
+.carousel-caption {
+	font-size: 40px;
+	top: 35%;
+	line-height: 40px;
+}
+.carousel {
+	margin-top: 120px;
+}
+.location-detail h2 {
+	font-size: 24px;
+}
+.select-wrapper.blackSelect{
+	width:100%;
+	max-width:inherit;}
+}

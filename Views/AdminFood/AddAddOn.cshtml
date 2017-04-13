@@ -1,0 +1,84 @@
+﻿@{
+    ViewBag.Title = "AddAddOn";
+      Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@model List<Resturant.Models.AddOn>
+@using Resturant.Models;
+<div class="row" style="margin-top:10%;">
+    <div class="col-md-offset-2 col-md-6">
+        <div class="box box-primary col-md-10">
+            <div class="box-body">
+                <h3 class="box-title">Add AddOn</h3>
+                <form role="form" method="post" action="../AdminFood/addAddon">
+                    <!-- text input -->
+                    <div class="form-group">
+
+                        <input type="text" class="form-control" name="Name" placeholder="Enter the Name of Addon">
+                    </div>
+                    <div class="form-group">
+
+                        <input type="text" class="form-control" name="Price" placeholder="Enter the Price of Addon">
+                    </div>
+                    <label>Select Category*</label>
+
+                    <select class="form-control" name="Category">
+                        <option>Select a AddOn</option>
+                            @{
+                                string [] names = Enum.GetNames(typeof(Resturant.Models.ProjectEnums.AddOnCategories));
+                                int [] values =(int[]) Enum.GetValues(typeof(Resturant.Models.ProjectEnums.AddOnCategories));
+                                for (int i = 0; i < names.Length;i++ )
+                                {
+                              <option value=@values[i]>@names[i]</option>
+                                }
+                        }
+                        
+                    </select>
+
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-default">Cancel</button>
+                        <button type="submit" class="btn btn-primary pull-right">Add</button>
+                    </div>
+
+
+                    <!-- radio -->
+                    <!-- select -->
+                    <!-- Select multiple-->
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">List of AddOns</h3>
+    </div>
+    <div class="box-body">
+        <table id="example2" class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th class="col-md-4">Name</th>
+                    <th class="col-md-2">Price</th>
+                    <th class="col-md-4">Category</th>
+                    <th>Action</th>
+
+                </tr>
+
+            </thead>
+            @foreach (AddOn addon in Model.ToList())
+            {
+                <tr onclick="location.href='@Url.Action("DisplayUpdateAddOn", "AdminFood", new { _id=addon.Id})'">
+                    <td>@addon.Name</td>
+                    <td>@addon.Price</td>
+                    <td>@Enum.Parse(typeof(Resturant.Models.ProjectEnums.AddOnCategories),addon.Category+"")</td>
+                 
+                    <td>@Html.ActionLink("Delete Addon", "deleteAddOn", new { _addOnId = addon.Id }, new { @type = "button", @class = "btn btn-block btn-primary" }) </td>
+
+                </tr>
+            }
+            <tbody>
+        </table>
+    </div>
+</div>
+

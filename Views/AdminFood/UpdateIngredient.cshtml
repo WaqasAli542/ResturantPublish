@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "UpdateIngredient";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+@model List<Resturant.Models.Ingredient>
+@using Resturant.Models;
+<div class="row" style="margin-top:10%;">
+    <div class="col-md-offset-2 col-md-6">
+        <div class="box box-primary col-md-10">
+            <div class="box-body">
+                <h3 class="box-title">Update ingredients</h3>
+                @{
+    Ingredient ingredient = ViewBag.ingredient;
+    <form role="form" method="post" action="../AdminFood/UpdateIngredients">
+
+
+
+        <!-- text input -->
+        <div class="form-group">
+            <input type="text" hidden name="Id" value=@ingredient.Id>
+            <input type="text" class="form-control" name="Name" value="@ingredient.Name">
+        </div>
+        <div class="box-footer">
+            <button type="submit" class="btn btn-default">Cancel</button>
+            <button type="submit" class="btn btn-primary pull-right">Update</button>
+        </div>
+
+
+        <!-- radio -->
+        <!-- select -->
+        <!-- Select multiple-->
+    </form>
+}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">List of Ingredients</h3>
+    </div>
+    <div class="box-body">
+        <table id="example2" class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th class="col-md-10">Name</th>
+                    <th>Action</th>
+
+                </tr>
+
+            </thead>
+            @foreach (Ingredient ingredients in Model.ToList())
+            {
+                <tr onclick="location.href='@Url.Action("DisplayUpdateIngredients", "AdminFood", new { _id = ingredients.Id })'">
+                    <td>@ingredients.Name</td>
+                    
+                    <td>@Html.ActionLink("Delete Ingredients", "deleteIngredients", new { _addOnId = ingredients.Id }, new { @type = "button", @class = "btn btn-block btn-primary" }) </td>
+
+                </tr>
+            }
+            <tbody>
+        </table>
+    </div>
+</div>
+

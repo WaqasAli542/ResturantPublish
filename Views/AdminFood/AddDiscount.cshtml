@@ -1,0 +1,136 @@
+﻿@{
+    ViewBag.Title = "AddDiscount";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+@model List<Resturant.Models.Discount>
+@using Resturant.Models;
+<script type="text/javascript">
+    function updateValue() {
+
+        $.ajax({
+            dataType: "json",
+            type: "GET",
+            url: '@Url.Action("getCategory", "AdminFood")',
+            contentType: "application/json; charset=utf-8",
+            data: { cousineId: parseInt($('#CousineId').val()) },
+            success: function (response) {
+
+                var $el = $("#CategoryId");
+                $el.empty(); // remove old options
+                $el.append($("<option></option>")
+                        .attr("value", '').text('Please Select'));
+
+                $.each(response, function (value, key) {
+
+                    $el.append($("<option></option>")
+                            .attr("value", key.Id).text(key.Name));
+                });
+            },
+            error: function (response) { alert(response ); }
+
+        });
+
+    }
+
+</script>
+
+<div class="row" style="margin-top:10%;">
+    <div class="col-md-offset-2 col-md-6">
+        <div class="box box-primary col-md-10">
+            <div class="box-body">
+                <h3 class="box-title">Add Discount</h3>
+                <form role="form" method="post" action="../AdminFood/addDiscount">
+                    <!-- text input -->
+                    <div class="form-group">
+
+                        <input type="text" class="form-control" name="Name" placeholder="Enter the Name of Discount">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="Percentage" placeholder="Enter the Percentage to Discount">
+                    </div>
+                    <div class="form-group">
+                        <label>Select Cousine</label>
+                        <select class="form-control" onchange="updateValue()" id="CousineId" name="CousineId">
+                            <option>Select a Cousine</option>
+                            @foreach (Cousine cousine in ViewBag.Cousines)
+                            {
+                                <option value=@cousine.Id>@cousine.Name</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Select Category</label>
+                        <select class="form-control" id="CategoryId" name="CategoryId"></select>
+                    </div>
+                    <div class="form-group">
+                        <input type="date" class="form-control" name="StartingDate" placeholder="Enter the Starting date">
+                       
+                    </div>
+                    <div class="form-group">
+                        <input type="date" class="form-control" name="EndingDate" placeholder="Enter the Ending date">
+                    </div>
+                    <div class="form-group">
+                        <input type="time" class="form-control" name="StartingTime" placeholder="Enter the Starting date">
+
+                    </div>
+                    <div class="form-group">
+                        <input type="time" class="form-control" name="EndingTime" placeholder="Enter the Ending date">
+                    </div>
+
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-default">Cancel</button>
+                        <button type="submit" class="btn btn-primary pull-right">Add</button>
+                    </div>
+
+
+                    <!-- radio -->
+                    <!-- select -->
+                    <!-- Select multiple-->
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">List of AddOns</h3>
+    </div>
+    <div class="box-body">
+        <table id="example2" class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th class="col-md-2">Name</th>
+                    <th class="col-md-1">Category</th>
+                    <th class="col-md-1">Percentage</th>
+                    <th class="col-md-2">Starting Date</th>
+                    <th class="col-md-2">Ending Date</th>
+                    <th class="col-md-1">Starting Time</th>
+                    <th class="col-md-1">Ending Time</th>
+                    <th class="col-md-2">Action</th>
+
+                </tr>
+
+            </thead>
+            @foreach (Discount discount in Model.ToList())
+            {
+                <tr>
+                    <td>@discount.Name</td>
+                    <td>@discount.Category.Name</td>
+                    <td>@discount.Percentage</td>
+                    <td>@discount.StartingDate</td>
+                    <td>@discount.EndingDate</td>
+                    <td>@discount.StartingTime</td>
+                    <td>@discount.EndingTime</td>
+                    <td>
+                        @Html.ActionLink("Delete", "DeleteDiscount", new { _id = discount.Id }, new { @type = "button", @class = "btn btn-danger" })
+                        @Html.ActionLink("Edit", "DisplayUpdateDiscount", new { _id = discount.Id }, new { @type = "button", @class = "btn btn-primary" })
+                    </td>
+
+                </tr>
+            }
+            <tbody>
+        </table>
+    </div>
+</div>
+

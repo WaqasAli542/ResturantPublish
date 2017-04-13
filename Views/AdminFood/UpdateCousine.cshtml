@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "AddFood";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+@model Resturant.Models.Cousine 
+@using Resturant.Models;
+<div class="row" style="margin-top:10%;">
+    <div class="col-md-offset-2 col-md-6">
+        <div class="box box-primary col-md-10">
+            <div class="box-body">
+                <h3 class="box-title">Update Cousine</h3>
+                <form role="form" method="post" action="../AdminFood/updateCousine">
+                    <!-- text input -->
+                    @{
+                        Cousine cousineName = ViewBag.cousine;
+                    }
+
+                    @Html.Hidden("Id", cousineName.Id);
+                    <div class="form-group">
+
+                        <input type="text" class="form-control" name="Name"  value=@cousineName.Name>
+                    </div>
+
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-default">Cancel</button>
+                        <button type="submit" class="btn btn-primary pull-right">Update</button>
+                    </div>
+
+
+                    <!-- radio -->
+                    <!-- select -->
+                    <!-- Select multiple-->
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">List of Cousines</h3>
+    </div>
+        <div class="box-body">
+            <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th class="col-md-10">Name</th>
+                        <th>Action</th>
+                       
+                    </tr>
+                    
+                </thead>
+                @foreach (Cousine cousine in ViewBag.cousineList)
+                {
+                      <tr>
+                    <td>@cousine.Name</td>
+                          <td>@Html.ActionLink("Delete Cousine", "deleteCousine", new { _id = cousine.Id }, new {@type="button", @class="btn btn-block btn-primary" }) </td>
+                 
+                  </tr>
+                }
+                <tbody>
+            </table>
+        </div>
+    </div>
+

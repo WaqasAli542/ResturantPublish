@@ -1,0 +1,284 @@
+﻿@{
+    ViewBag.Title = "AddFood";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+@model Resturant.Models.Food
+@using Resturant.Models;
+
+<script type="text/javascript">
+    function updateValue() {
+
+        $.ajax({
+            dataType: "json",
+            type: "GET",
+            url: '@Url.Action("getCategory", "AdminFood")',
+            contentType: "application/json; charset=utf-8",
+            data: { cousineId: parseInt($('#CousineId').val()) },
+            success: function (response) {
+
+                var $el = $("#CategoryId");
+                $el.empty(); // remove old options
+                $el.append($("<option></option>")
+                        .attr("value", '').text('Please Select'));
+
+                $.each(response, function (value, key) {
+
+                    $el.append($("<option></option>")
+                            .attr("value", key.Id).text(key.Name));
+                });
+            },
+            error: function (response) { alert(response); }
+
+        });
+
+    }
+
+</script>
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">List of Ingredients</h3>
+        <input type="button" style="margin-left:84%;" class="btn btn-primary"  data-toggle="modal" data-target="#mymodal" value="+Add" />
+    </div>
+    <div class="box-body">
+        <table id="example2" class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th class="col-md-10">Name</th>
+                    <th>Food Category</th>
+           
+
+              
+
+            </thead>
+            @foreach (Food_Ingredients fi in Model.Food_Ingredients)
+            {
+
+                <tr>
+                
+                    <td>@fi.Ingredient.Name</td>
+                  
+                    <td>@Html.ActionLink("Delete Ingredient", "deleteFoodIngredients", new { _id = fi.Id }, new { @type = "button", @class = "btn btn-block btn-primary" }) </td>
+
+                </tr>
+            }
+            <tbody>
+        </table>
+    </div>
+</div>
+
+
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">List of AddsOn</h3>
+        <input type="button" style="margin-left:84%;" class="btn btn-primary" data-toggle="modal" data-target="#AddOnmodal" value="+Add" />
+    </div>
+    <div class="box-body">
+        <table id="example2" class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th class="col-md-10">Name</th>
+                    <th>Food Category</th>
+
+
+
+
+            </thead>
+            @foreach (Food_AddOn fa in Model.Food_AddOn)
+            {
+
+                <tr>
+                    <td>@fa.AddOn.Name</td>
+                    <td>@Html.ActionLink("Delete AddOn", "deleteFoodAddOn", new { _id = fa.Id }, new { @type = "button", @class = "btn btn-block btn-primary" }) </td>
+
+                </tr>
+            }
+            <tbody>
+        </table>
+    </div>
+</div>
+
+
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">List of Sizes</h3>
+        <input type="button" style="margin-left:84%;" class="btn btn-primary" data-toggle="modal" data-target="#Sizesmodal" value="+Add" />
+    </div>
+    <div class="box-body">
+        <table id="example2" class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th class="col-md-6">Name</th>
+                    <th class="col-md-2">Price</th>
+                    <th class="col-md-2">Category</th>
+                    <th>Food Category</th>
+
+
+
+
+            </thead>
+            @foreach (FoodItem fa in Model.FoodItems)
+            {
+
+                <tr>
+                    <td>@fa.Size</td>
+                    <td>@fa.Price</td>
+                    <td>@fa.Food_Size.SizeDescription</td>
+                    <td>@Html.ActionLink("Delete FoodItem", "deleteFoodItem", new { _id = fa.Id ,_foodId=fa.FoodId }, new { @type = "button", @class = "btn btn-block btn-primary" }) </td>
+
+                </tr>
+            }
+            <tbody>
+        </table>
+    </div>
+</div>
+<div class="example-modal" >
+    <div class="modal" id="mymodal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form action="../AddFoodIngredients">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title">Add Food Inregdients</h4>
+                    </div>
+
+                    <select class="form-control" name="id">
+                        <option>Ingredients</option>
+                        @foreach (Ingredient ingredient in ViewBag.Ingredients)
+                        {
+                            bool check=true;
+                             foreach (Food_Ingredients fi in Model.Food_Ingredients)
+                              {
+                                  if (fi.IngredientsID == ingredient.Id) {
+                                      check = false;
+                              }               
+                             }
+                             if (check) { 
+                            <option value=@ingredient.Id>@ingredient.Name</option>
+                        }
+                        }
+
+                    </select>
+                    @Html.Hidden("FoodId", @Model.Id)
+                    <div class="modal-footer">
+                        <input type="submit" class="btn btn-default pull-left" data-dismiss="modal" value="Close">
+                        <input type="submit" class="btn btn-primary" value="Save changes ">
+
+                    </div>
+                </form>
+            </div>
+           
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+</div>
+
+
+<!-- Add On -->
+<div class="example-modal">
+    <div class="modal" id="AddOnmodal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form action="..\AddFoodAddOn">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title">Add Food AddOn</h4>
+                    </div>
+
+                    <select class="form-control" name="AddOnID">
+                        <option>Ingredients</option>
+                        @foreach (AddOn addOn in ViewBag.AddOn)
+                        {
+                            bool check = true;
+                            foreach (Food_AddOn fa in Model.Food_AddOn)
+                            {
+                                if (fa.AddOnId == addOn.Id)
+                                {
+                                    check = false;
+                                }
+                            }
+                            if (check)
+                            {
+                                <option value=@addOn.Id>@addOn.Name</option>
+                            }
+                        }
+
+                    </select>
+                    @Html.Hidden("FoodId", @Model.Id)
+                    <div class="modal-footer">
+                        <input type="submit" class="btn btn-default pull-left" value="Close" data-dismiss="modal">
+                        <input type="submit" class="btn btn-primary" value="Save changes">
+
+                    </div>
+                </form>
+            </div>
+
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+</div>
+
+
+
+<!-- Sizes -->
+<div class="example-modal">
+    <div class="modal" id="Sizesmodal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form action="..\AddFoodItem">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title">Add Food AddOn</h4>
+                    </div>
+
+                
+                        <div class="form-group">
+
+                            <input type="text" class="form-control" name="Size" placeholder="Enter the size of Food Item">
+                        </div>
+                        <div class="form-group">
+
+                            <input type="number" class="form-control" name="Price" placeholder="Enter the price of Food Item">
+                        </div>
+                        <div class="form-group">
+                            <label>Select </label>
+                            <select class="form-control" name="Food_Size_Id">
+                                <option>Select a Item Category</option>
+                                @foreach (Food_Size foods in @ViewBag.Food_Size)
+                                {
+                                    <option value=@foods.Id>@foods.SizeDescription</option>
+                                }
+                            </select>
+                        </div>
+                        
+
+
+                        <!-- radio -->
+                        <!-- select -->
+                        <!-- Select multiple-->
+                 
+                    @Html.Hidden("FoodId", @Model.Id)
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-default pull-left" value="Close" data-dismiss="modal">
+                        <input type="submit" class="btn btn-primary" value="Save changes">
+
+                    </div>
+                </form>
+
+            </div>
+
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+</div>
