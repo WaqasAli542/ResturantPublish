@@ -12,7 +12,7 @@
                 <form role="form" method="post" action="../AdminFood/AddFoodItem">
 
                     <div class="form-group">
-                        <label>Select</label>
+                        <label>Select Food</label>
                         <select class="form-control" name="FoodId">
                             <option>Select a Food</option>
                             @foreach (Food food in ViewBag.Food)
@@ -21,17 +21,26 @@
                             }
                         </select>
                     </div>
+
+                    <div class="form-group">
+                        <label>Select Size</label>
+                        <select class="form-control" name="Food_Size_Id">
+                            <option>Select a Size</option>
+                            @foreach (Food_Size size in ViewBag.Food_Size)
+                            {
+                                <option value=@size.Id>@size.SizeDescription</option>
+                            }
+                        </select>
+                    </div>
                     <!-- text input -->
                     <div class="form-group">
-
-                        <input type="number" class="form-control" name="Size" placeholder="Enter the size of Food Item">
+                        <input type="text" class="form-control" name="Size" placeholder="Enter description of Food Item'size'">
                     </div>
                     <div class="form-group">
-
                         <input type="number" class="form-control" name="Price" placeholder="Enter the price of Food Item">
                     </div>
                     <div class="box-footer">
-                        <button type="submit" class="btn btn-default">Cancel</button>
+                        <button class="btn btn-default">Cancel</button>
                         <button type="submit" class="btn btn-primary pull-right">Add</button>
                     </div>
 
@@ -67,7 +76,7 @@
                     <td>@foodItem.Food.Name</td>
                     <td>@foodItem.Price</td>
                     <td>@foodItem.Size</td>
-                    <td>@Html.ActionLink("Delete FoodItem", "deleteFoodItem", new { _id = foodItem.Id }, new { @type = "button", @class = "btn btn-block btn-primary" }) </td>
+                    <td>@Html.ActionLink("Delete FoodItem", "deleteFoodItem", new { _id = foodItem.Id, _foodId = foodItem.FoodId }, new { @type = "button", @class = "btn btn-block btn-primary" }) </td>
 
                 </tr>
             }

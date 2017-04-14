@@ -12,27 +12,23 @@
             dataType: "json",
             type: "GET",
             url: '@Url.Action("getCategory", "AdminFood")',
-            contentType: "application/json; charset=utf-8",
+            contentType:"application/x-www-form-urlencoded",
             data: { cousineId: parseInt($('#CousineId').val()) },
             success: function (response) {
-
                 var $el = $("#CategoryId");
                 $el.empty(); // remove old options
                 $el.append($("<option></option>")
                         .attr("value", '').text('Please Select'));
-                   
                 $.each(response, function (value, key) {
-                 
                     $el.append($("<option></option>")
                             .attr("value", key.Id).text(key.Name));
                 });
             },
-            error: function (response) { alert(response ); }
+            error: function (response) { alert(response); }
 
         });
 
     }
-    
 </script>
 <div class="row" style="margin-top:10%;">
     <div class="col-md-offset-2 col-md-6">
@@ -100,7 +96,7 @@
             @foreach (Food food in Model.ToList())
             {
                 
-                <tr onclick="location.href='@Url.Action("DisplayUpdateFood", "AdminFood", new { _id=food.Id})'">
+                <tr onclick="location.href='@Url.Action("DisplayUpdateFood", "AdminFood", new { _id = food.Id })'">
                     <td>@food.Name</td>
                     <td>@food.Category.Name</td>
                     @if (!(food.Image == null))
