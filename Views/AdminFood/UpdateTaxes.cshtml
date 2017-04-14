@@ -2,7 +2,7 @@
     ViewBag.Title = "UpdateTaxes";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
-@model List<Resturant.Models.Taxes>
+@model List<Resturant.Models.Tax>
 @using Resturant.Models;
 <div class="row" style="margin-top:10%;">
     <div class="col-md-offset-2 col-md-6">
@@ -10,7 +10,7 @@
             <div class="box-body">
                 <h3 class="box-title">Update Taxes</h3>
                 @{
-            Taxes taxes = ViewBag.Taxes;
+            Tax taxes = ViewBag.Taxes;
             <form role="form" method="post" action="../AdminFood/UpdateTaxes">
 
                 <div class="form-group">
@@ -52,7 +52,7 @@
                 </tr>
 
             </thead>
-            @foreach (Taxes tax in Model.ToList())
+            @foreach (Tax tax in Model.ToList())
             {
                 <tr>
                     <td>@tax.Name</td>
