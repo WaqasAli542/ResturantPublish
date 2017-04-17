@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "UpdateBranch";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+@model List<Resturant.Models.Branch>
+@using Resturant.Models;
+
+
+<div class="row" style="margin-top:10%;">
+    <div class="col-md-offset-2 col-md-6">
+        <div class="box box-primary col-md-10">
+            <div class="box-body">
+                <h3 class="box-title">Update Food</h3>
+                <form role="form" method="post" action="../ResturantDetail/updateBranch" enctype="multipart/form-data">
+                    @{
+                        Branch branch = ViewBag.Branch;
+                    }
+                    <div class="form-group">
+                        <label>Select Resturant</label>
+                        <select class="form-control" name="ResturantID">
+                            <option>Select a Resturant</option>
+                            @foreach (ResturantDetail resturant in ViewBag.Resturants)
+                            {
+                                <option value=@resturant.Id>@resturant.Name</option>
+                            }
+                        </select>
+                    </div>
+                    <!-- text input -->
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="Name" value="@branch.Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="Address" value="@branch.Address">
+                    </div>
+                    <input type="text" name="Id" value=@branch.Id hidden />
+                    <input type="file" name="file" />
+                    <br />
+
+                    <label>
+                        <input type="checkbox" name="ImgBox"> Remove Image
+                    </label>
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-default">Cancel</button>
+                        <button type="submit" class="btn btn-primary pull-right">Add</button>
+                    </div>
+
+
+                    <!-- radio -->
+                    <!-- select -->
+                    <!-- Select multiple-->
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

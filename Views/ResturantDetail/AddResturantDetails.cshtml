@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "AddAddOn";
+      Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@model List<Resturant.Models.ResturantDetail>
+@using Resturant.Models;
+<div class="row" style="margin-top:10%;">
+    <div class="col-md-offset-2 col-md-6">
+        <div class="box box-primary col-md-10">
+            <div class="box-body">
+                <h3 class="box-title">Add Resturant</h3>
+                <form role="form" method="post" action="../ResturantDetail/addResturantDetail">
+                    <!-- text input -->
+                    <div class="form-group">
+
+                        <input type="text" class="form-control" name="Name" placeholder="Enter the Name of Resturant">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="Tagline" placeholder="Enter the Tagline of Resturant">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="Location" placeholder="Enter the Location of Resturant">
+                    </div>
+
+                    <div class="box-footer">
+                        <button class="btn btn-default">Cancel</button>
+                        <button type="submit" class="btn btn-primary pull-right">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">List of AddOns</h3>
+    </div>
+    <div class="box-body">
+        <table id="example2" class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th class="col-md-4">Name</th>
+                    <th class="col-md-2">Location</th>
+                    <th class="col-md-4">TagLine</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+          
+                @foreach (ResturantDetail resturant in ViewBag.ResturantDetailList)
+                {
+                    <tr>
+                        <td>@resturant.Name</td>
+                        <td>@resturant.Location</td>
+                        <td>@resturant.Tagline</td>
+                        <td>@Html.ActionLink("Delete", "deleteResturantDetail", new { _Id = resturant.Id }, new { @type = "button", @class = "btn btn-block btn-primary" }) </td>
+                    </tr>
+                }
+
+            <tbody>
+        </table>
+    </div>
+</div>
+
