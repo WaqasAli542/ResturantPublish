@@ -85,10 +85,10 @@
         <table id="example2" class="table table-bordered table-hover">
             <thead>
                 <tr>
-                    <th class="col-md-10">Name</th>
-                    <th>Food Category</th>
-                    <th>Image</th>
-                    <th>Action</th>
+                    <th class="col-md-6">Name</th>
+                    <th class="col-md-2">Food Category</th>
+                    <th class="col-md-2">Image</th>
+                    <th class="col-md-2">Action</th>
 
                 </tr>
 
@@ -96,7 +96,7 @@
             @foreach (Food food in Model.ToList())
             {
                 
-                <tr onclick="location.href='@Url.Action("DisplayUpdateFood", "AdminFood", new { _id = food.Id })'">
+                <tr onclick="location.href='@Url.Action("DisplayFoodList", "AdminFood", new { id = food.Id })'">
                     <td>@food.Name</td>
                     <td>@food.Category.Name</td>
                     @if (!(food.Image == null))
@@ -114,7 +114,9 @@
                     {
                         <td>No Image</td>
                     }
-                    <td>@Html.ActionLink("Delete Food", "deleteFood", new { _id = food.Id }, new { @type = "button", @class = "btn btn-block btn-primary" }) </td>
+                    <td>
+                    @Html.ActionLink("Update Food", "DisplayUpdateFood", new { _id = food.Id }, new { @type = "button", @class = "btn btn-primary" }) 
+                    @Html.ActionLink("Delete Food", "deleteFood", new { _id = food.Id }, new { @type = "button", @class = "btn btn-danger" }) </td>
 
                 </tr>
             }
