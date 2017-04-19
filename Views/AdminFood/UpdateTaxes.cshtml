@@ -1,4 +1,4 @@
-@{
+﻿@{
     ViewBag.Title = "UpdateTaxes";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
@@ -21,6 +21,10 @@
                     @Html.Hidden("Id", taxes.Id)
                     <input type="text" class="form-control" name="Percentage" value=@taxes.Percentage>
                 </div>
+
+                <!-- text input -->
+
+
                 <div class="box-footer">
                     <button type="submit" class="btn btn-default">Cancel</button>
                     <button type="submit" class="btn btn-primary pull-right">Update</button>
@@ -54,6 +58,7 @@
                     <td>@tax.Name</td>
                     <td>@tax.Percentage</td>
                     <td>@Html.ActionLink("Delete Tax", "deleteTaxes", new { _id = tax.Id }, new { @type = "button", @class = "btn btn-block btn-primary" }) </td>
+
                 </tr>
             }
             <tbody>
