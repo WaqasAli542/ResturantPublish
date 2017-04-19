@@ -61,7 +61,7 @@
                         <input type="text" class="form-control" name="Tageline" placeholder="Tagline">
                     </div>
 
-                    <input type="file" name="file" />
+                  
                     <div class="box-footer">
                         <button type="submit" class="btn btn-default">Cancel</button>
                         <button type="submit" class="btn btn-primary pull-right">Add</button>
@@ -86,8 +86,8 @@
             <thead>
                 <tr>
                     <th class="col-md-6">Name</th>
-                    <th class="col-md-2">Food Category</th>
-                    <th class="col-md-2">Image</th>
+                    <th class="col-md-4">Food Category</th>
+                   
                     <th class="col-md-2">Action</th>
 
                 </tr>
@@ -99,21 +99,7 @@
                 <tr onclick="location.href='@Url.Action("DisplayFoodList", "AdminFood", new { id = food.Id })'">
                     <td>@food.Name</td>
                     <td>@food.Category.Name</td>
-                    @if (!(food.Image == null))
-                    {
-                        if (!food.Image.Equals(string.Empty))
-                        {
-                            <td> <img src="@food.Image" height="100" width="100" /></td>
-                        }
-                        else
-                        {
-                            <td>No Image</td>
-                        }
-                    }
-                    else
-                    {
-                        <td>No Image</td>
-                    }
+                    
                     <td>
                     @Html.ActionLink("Update Food", "DisplayUpdateFood", new { _id = food.Id }, new { @type = "button", @class = "btn btn-primary" }) 
                     @Html.ActionLink("Delete Food", "deleteFood", new { _id = food.Id }, new { @type = "button", @class = "btn btn-danger" }) </td>

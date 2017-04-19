@@ -45,7 +45,7 @@
                     }
                     <div class="form-group">
                         <label>Select Cuisine</label>
-                        <select class="form-control" onchange="updateValue()" id="CousineId" name="CousineId">
+                        <select class="form-control" onchange="updateValue()" id="CousineId" name="CousineId" required>
                             <option>Select a Cuisine</option>
                             @foreach (Cousine cousine in ViewBag.Cousines)
                             {
@@ -55,7 +55,7 @@
                     </div>
                     <div class="form-group">
                         <label>Select Category</label>
-                        <select class="form-control" id="CategoryId" name="CategoryId"></select>
+                        <select class="form-control" id="CategoryId" name="CategoryId" required></select>
                     </div>
                     <!-- text input -->
                     <div class="form-group">
@@ -67,12 +67,12 @@
                         <input type="text" class="form-control" name="Tageline" value="@f.Tageline">
                     </div>
                     <input type="text" name="Id" value=@f.Id hidden />
-                    <input type="file" name="file" />
+                   
 
                     <br/>
 
-                    <label>
-                        <input type="checkbox" name="ImgBox"> Remove Image
+                    <label hidden>
+                        <input type="checkbox" name="ImgBox" > Remove Image
                     </label>
                     <div class="box-footer">
                         <button type="submit" class="btn btn-default">Cancel</button>
