@@ -4,9 +4,10 @@
 }
 @model Resturant.Models.Food
 @using Resturant.Models;
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 <script type="text/javascript">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     function updateValue() {
         $.ajax({
             dataType: "json",
@@ -51,7 +52,7 @@
 <div class="box">
     <div class="box-header">
         <h3 class="box-title">List of Sizes</h3>
-        <input type="button" style="margin-left:84%;" class="btn btn-primary pull-right" data-toggle="modal" data-target="#Sizesmodal" value="Add" />
+        <a style="margin-left:84%;" class="btn btn-primary pull-right" data-toggle="modal" data-target="#Sizesmodal" ><span class="glyphicon glyphicon-plus-sign"></span> Add</a>
     </div>
     <div class="box-body">
         <table id="example2" class="table table-bordered table-hover">
@@ -145,7 +146,7 @@
 
 @* Sizes Modal *@
 <!-- Sizes -->
-
+<div class="example-modal">
     <div class="modal" id="Sizesmodal">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -198,10 +199,10 @@
         <!-- /.modal-dialog -->
     </div>
     <!-- /.modal -->
-
+</div>
 
 @* AddOn Modal *@
-
+<div class="example-modal">
     <div class="modal" id="AddOnmodal">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -248,11 +249,11 @@
         <!-- /.modal-dialog -->
     </div>
     <!-- /.modal -->
-
+</div>
 
 @* Ingredients Modal *@
 
-
+<div class="example-modal" >
     <div class="modal" id="mymodal">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -299,6 +300,7 @@
         <!-- /.modal-dialog -->
     </div>
     <!-- /.modal -->
+</div>
 
 
 
