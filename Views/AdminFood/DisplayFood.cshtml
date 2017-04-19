@@ -7,7 +7,6 @@
 
 <script type="text/javascript">
     function updateValue() {
-
         $.ajax({
             dataType: "json",
             type: "GET",
@@ -125,10 +124,6 @@
                 <tr>
                     <th class="col-md-10">Name</th>
                     <th>Action</th>
-           
-
-              
-
             </thead>
             @foreach (Food_Ingredients fi in Model.Food_Ingredients)
             {
