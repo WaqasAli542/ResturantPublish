@@ -8,7 +8,7 @@
     <div class="col-md-offset-2 col-md-6">
         <div class="box box-primary col-md-10">
             <div class="box-body">
-                <h3 class="box-title">Update Cousine</h3>
+                <h3 class="box-title">Update Cuisine</h3>
                 <form role="form" method="post" action="../AdminFood/updateCousine">
                     <!-- text input -->
                     @{
@@ -38,7 +38,7 @@
 
 <div class="box">
     <div class="box-header">
-        <h3 class="box-title">List of Cousines</h3>
+        <h3 class="box-title">List of Cuisine</h3>
     </div>
         <div class="box-body">
             <table id="example2" class="table table-bordered table-hover">
@@ -54,7 +54,7 @@
                 {
                       <tr>
                     <td>@cousine.Name</td>
-                          <td>@Html.ActionLink("Delete Cousine", "deleteCousine", new { _id = cousine.Id }, new {@type="button", @class="btn btn-block btn-primary" }) </td>
+                          <td>@Html.ActionLink("Delete Cuisine", "deleteCousine", new { _id = cousine.Id }, new { @type = "button", @class = "btn btn-block btn-primary" }) </td>
                  
                   </tr>
                 }

@@ -120,7 +120,7 @@
                 <tr>
                     
                     <th class="col-md-7">Food Category</th>
-                    <th>Cousine</th>
+                    <th>Cuisine</th>
                     <th>Size</th>
                     <th>Quantity</th>
                     <th>Flexibility</th>
@@ -165,9 +165,9 @@
                     <div class="modal-body">
 
                         <div class="form-group">
-                            <label>Select Cousine</label>
+                            <label>Select Cuisine</label>
                             <select class="form-control" onchange="updateValue()" id="CousineId" name="CousineId">
-                                <option>Select a Cousine</option>
+                                <option>Select a Cuisine</option>
                                 @foreach (Cousine cousine in ViewBag.Cousines)
                                 {
                                     <option value=@cousine.Id>@cousine.Name</option>
@@ -176,9 +176,9 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Select Cousine</label>
+                            <label>Select Cuisine</label>
                             <select class="form-control" id="SizeId" name="SizeId">
-                                <option>Select a Cousine</option>
+                                <option>Select a Cuisine</option>
                                 @foreach (Food_Size size in ViewBag.Sizes)
                                 {
                                     <option value=@size.Id>@size.SizeDescription</option>
@@ -259,7 +259,7 @@
                         <div class="form-group">
                             <label>Select Cousine</label>
                             <select class="form-control" onchange="updateAddOn()" id="AddOnCategory" name="AddOnCategory">
-                                <option>Select a AddOn</option>
+                                <option>Select an AddOn</option>
                                 @{
                                     string[] names = Enum.GetNames(typeof(Resturant.Models.ProjectEnums.AddOnCategories));
                                     int[] values = (int[])Enum.GetValues(typeof(Resturant.Models.ProjectEnums.AddOnCategories));
@@ -272,7 +272,7 @@
                         </div>
                         @Html.Hidden("SpecialOfferID", Model.Id)
                         <div class="form-group">
-                            <label>Select Category</label>
+                            <label>Select AddOn</label>
                             <select class="form-control" id="AddOnID" name="AddOnID"></select>
                         </div>
                         <div class="form-group">

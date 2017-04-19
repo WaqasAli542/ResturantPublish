@@ -49,9 +49,9 @@
                         <input type="text" class="form-control" name="Percentage" placeholder="Enter the Percentage to Discount">
                     </div>
                     <div class="form-group">
-                        <label>Select Cousine</label>
+                        <label>Select Cuisines</label>
                         <select class="form-control" onchange="updateValue()" id="CousineId" name="CousineId">
-                            <option>Select a Cousine</option>
+                            <option>Select a Cuisines</option>
                             @foreach (Cousine cousine in ViewBag.Cousines)
                             {
                                 <option value=@cousine.Id>@cousine.Name</option>

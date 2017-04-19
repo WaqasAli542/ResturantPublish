@@ -44,9 +44,9 @@
                         Food f = ViewBag.food;
                     }
                     <div class="form-group">
-                        <label>Select Cousine</label>
+                        <label>Select Cuisine</label>
                         <select class="form-control" onchange="updateValue()" id="CousineId" name="CousineId">
-                            <option>Select a Cousine</option>
+                            <option>Select a Cuisine</option>
                             @foreach (Cousine cousine in ViewBag.Cousines)
                             {
                                 <option value=@cousine.Id>"@cousine.Name"</option>

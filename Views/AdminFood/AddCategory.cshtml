@@ -14,7 +14,7 @@
                     <div class="form-group">
                         <label>Select</label>
                         <select class="form-control" name="CousineId">
-                            <option>Select a Cousine</option>
+                            <option>Select a Cuisines</option>
                             @foreach (Cousine cousine in ViewBag.Cousines)
                             {
                                 <option value=@cousine.Id>@cousine.Name</option>
@@ -24,7 +24,7 @@
                     <!-- text input -->
                     <div class="form-group">
 
-                        <input type="text" class="form-control" name="Name" placeholder="Enter the Name of Cousine">
+                        <input type="text" class="form-control" name="Name" placeholder="Enter the Name of Category">
                     </div>
 
                     <div class="box-footer">
@@ -51,7 +51,7 @@
             <thead>
                 <tr>
                     <th class="col-md-10">Name</th>
-                    <th>Cousine</th>
+                    <th>Cuisine</th>
                     <th>Action</th>
 
                 </tr>
