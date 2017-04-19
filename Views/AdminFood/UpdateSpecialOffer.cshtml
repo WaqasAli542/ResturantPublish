@@ -23,13 +23,26 @@
 
                             @Html.TextBoxFor((m => m.FirstOrDefault(o => o.Id == specialofr.Id).EndingDate), "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
                         </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="Description" value="@specialofr.Description">
-                        </div>
+                       
                         <div class="form-group">
 
                             <input type="text" class="form-control" name="Price" value="@specialofr.Price">
                         </div>
+                        <div class="form-group">
+                            <input type="time" class="form-control" name="StartingTime" placeholder="Enter the Starting date">
+
+                        </div>
+                        <div class="form-group">
+                            <input type="time" class="form-control" name="EndingTime" placeholder="Enter the Ending date">
+                        </div>
+                        <div class="form-group">
+
+                            <input type="text" class="form-control" name="Name" value=@specialofr.Name>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="Description" value="@specialofr.Description">
+                        </div>
+
                         <input type="file" name="file" />
 
                         <label>

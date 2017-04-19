@@ -4,35 +4,35 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="e5151215577446bab4860ac56878d43f" Name="Diagram1">
-        <EntityTypeShape EntityType="ResturantDatabaseModel.AddOn" Width="1.5" PointX="12.25" PointY="21.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="ResturantDatabaseModel.Admin" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="ResturantDatabaseModel.Branch" Width="1.5" PointX="17" PointY="4.5" IsExpanded="true" />
+      <Diagram DiagramId="abd23b4d0d5f4d55afaf2f289a06d1a1" Name="Diagram1">
+        <EntityTypeShape EntityType="ResturantDatabaseModel.AddOn" Width="1.5" PointX="12.25" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ResturantDatabaseModel.Admin" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ResturantDatabaseModel.Branch" Width="1.5" PointX="17" PointY="4.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ResturantDatabaseModel.Branch_Day" Width="1.5" PointX="19.25" PointY="2.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="ResturantDatabaseModel.Branch_Item" Width="1.5" PointX="19.25" PointY="6.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ResturantDatabaseModel.Category" Width="1.5" PointX="10" PointY="15.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ResturantDatabaseModel.Cousine" Width="1.5" PointX="7.75" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ResturantDatabaseModel.Branch_Item" Width="1.5" PointX="19.25" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ResturantDatabaseModel.Category" Width="1.5" PointX="10" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ResturantDatabaseModel.Cousine" Width="1.5" PointX="7.75" PointY="15.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ResturantDatabaseModel.Customer" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ResturantDatabaseModel.Day" Width="1.5" PointX="17" PointY="2" IsExpanded="true" />
-        <EntityTypeShape EntityType="ResturantDatabaseModel.Discount" Width="1.5" PointX="12.25" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ResturantDatabaseModel.Discount" Width="1.5" PointX="12.25" PointY="13.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ResturantDatabaseModel.ExtraCharge" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ResturantDatabaseModel.Food" Width="1.5" PointX="12.25" PointY="17.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ResturantDatabaseModel.Food_AddOn" Width="1.5" PointX="14.5" PointY="17.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ResturantDatabaseModel.Food_Ingredients" Width="1.5" PointX="14.5" PointY="14.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ResturantDatabaseModel.Food_Size" Width="1.5" PointX="15" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ResturantDatabaseModel.Food" Width="1.5" PointX="12.25" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="ResturantDatabaseModel.Food_AddOn" Width="1.5" PointX="14.5" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ResturantDatabaseModel.Food_Ingredients" Width="1.5" PointX="14.5" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ResturantDatabaseModel.Food_Size" Width="1.5" PointX="15" PointY="11.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ResturantDatabaseModel.FoodItem" Width="1.5" PointX="14.5" PointY="20.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ResturantDatabaseModel.FoodItem_AddOn" Width="1.5" PointX="16.75" PointY="20.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ResturantDatabaseModel.Ingredient" Width="1.5" PointX="12.25" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ResturantDatabaseModel.FoodItem_AddOn" Width="1.5" PointX="16.75" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ResturantDatabaseModel.Ingredient" Width="1.5" PointX="12.25" PointY="10.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ResturantDatabaseModel.Order" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ResturantDatabaseModel.Order_ExtraCharges" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
         <EntityTypeShape EntityType="ResturantDatabaseModel.Order_Item" Width="1.5" PointX="5.25" PointY="7.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ResturantDatabaseModel.Order_Taxes" Width="1.5" PointX="8.25" PointY="4.625" IsExpanded="true" />
         <EntityTypeShape EntityType="ResturantDatabaseModel.PaymentMethod" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ResturantDatabaseModel.Postcode" Width="1.5" PointX="19.25" PointY="9.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ResturantDatabaseModel.ResturantDetail" Width="1.5" PointX="14.75" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ResturantDatabaseModel.SpecialOffer" Width="1.5" PointX="15" PointY="23.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ResturantDatabaseModel.SpecialOffer_AddOn" Width="1.5" PointX="17.25" PointY="23.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="ResturantDatabaseModel.SpecialOffer_Item" Width="1.5" PointX="17.25" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ResturantDatabaseModel.Postcode" Width="1.5" PointX="19.25" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ResturantDatabaseModel.ResturantDetail" Width="1.5" PointX="14.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ResturantDatabaseModel.SpecialOffer" Width="1.5" PointX="15" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ResturantDatabaseModel.SpecialOffer_AddOn" Width="1.5" PointX="17.25" PointY="23.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ResturantDatabaseModel.SpecialOffer_Item" Width="1.5" PointX="17.25" PointY="15.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ResturantDatabaseModel.Tax" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="ResturantDatabaseModel.FK_Food_AddOn_AddOn" ManuallyRouted="false" />
         <AssociationConnector Association="ResturantDatabaseModel.FK_SpecialOffer_AddOn_Addon" ManuallyRouted="false" />
